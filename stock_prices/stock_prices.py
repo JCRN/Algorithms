@@ -18,21 +18,24 @@ import argparse
 def find_max_profit(prices):
     max_profit = 0
     current_min_price = prices[0]
-    for i in range(len(prices - 1)):
-        if prices[i] < current_min_price:
-            current_min_price = prices[i]
+    for i in prices:
+        if i < current_min_price:
+            current_min_price = i
         else:
-            profit = prices[i] - current_min_price
+            profit = i - current_min_price
             if profit > max_profit:
                 max_profit = profit
-    return max_profit
+    return print(f'the maximum profit that would have been made would be: ${max_profit}')
 
 
-if __name__ == '__main__':
-    # This is just some code to accept inputs from the command line
-    parser = argparse.ArgumentParser(description='Find max profit from prices.')
-    parser.add_argument('integers', metavar='N', type=int, nargs='+', help='an integer price')
-    args = parser.parse_args()
+find_max_profit([1050, 270, 1540, 3800, 2])
 
-    print("A profit of ${profit} can be made from the stock prices {prices}.".format(
-        profit=find_max_profit(args.integers), prices=args.integers))
+#
+# if __name__ == '__main__':
+#     # This is just some code to accept inputs from the command line
+#     parser = argparse.ArgumentParser(description='Find max profit from prices.')
+#     parser.add_argument('integers', metavar='N', type=int, nargs='+', help='an integer price')
+#     args = parser.parse_args()
+#
+#     print("A profit of ${profit} can be made from the stock prices {prices}.".format(
+#         profit=find_max_profit(args.integers), prices=args.integers))
