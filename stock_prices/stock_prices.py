@@ -1,15 +1,14 @@
 #!/usr/bin/python
 
 # 1. Find the current min price value:
-#        - current_min_price starts at value stored in arr[0]
-#        - replaced by the concurrent lowest value in the array:
-#            if(n < current_min_price) then current_min_price = n
+#        - current_min_price is initialized at the value stored in arg[0]
+#        - current min price will be replaced by the next lower value in arg[]:
+#            if value at index i < current_min_price then the current_min_price = value at index i
 # 2. Find the maximum profit:
 #        - max_profit is initialized at 0
-#        - calculate potential profit for each stock price:
-#            profit = (current price - min price)
-#                if the current price is larger than the min price
-#                else set the current price as the new min price value and profit as 0
+#        - calculate the potential profit for each stock price:#
+#                if the current price is larger than the min price: profit = (current price - min price)
+#                else set the current_min_price = the current price and profit = 0
 # 3. Display the Maximum profit
 
 import argparse
