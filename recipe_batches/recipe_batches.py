@@ -12,28 +12,23 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
-    batches = []
+    batched = []
     nope = 'Not enough ingredients to make this recipe'
     for i in recipe:
         if i in ingredients:
             if ingredients[i] / recipe[i] >= 1:
-                batches.append(math.floor(ingredients[i] / recipe[i]))
+                batched.append(math.floor(ingredients[i] / recipe[i]))
             else:
                 return print(nope)
         else:
             return print(nope)
-    return print(f'{min(batches)} batches can be made with the available ingredients.')
+    return print(f'{min(batched)} batches can be made with the available ingredients.')
 
 
-recipe_batches({'milk': 100, 'butter': 50, 'flour': 5}, {'milk': 132, 'butter': 48, 'flour': 51})
-
-recipe_batches({'milk': 100, 'butter': 50, 'flour': 5}, {'milk': 432, 'butter': 200, 'flour': 51})
-
-
-# if __name__ == '__main__':
-#     # Change the entries of these dictionaries to test
-#     # your implementation with different inputs
-#     recipe = {'milk': 100, 'butter': 50, 'flour': 5}
-#     ingredients = {'milk': 132, 'butter': 48, 'flour': 51}
-#     print("{batches} batches can be made from the available ingredients: {ingredients}.".format(
-#         batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
+if __name__ == '__main__':
+    # Change the entries of these dictionaries to test
+    # your implementation with different inputs
+    recipe = {'milk': 100, 'butter': 50, 'flour': 5}
+    ingredients = {'milk': 132, 'butter': 48, 'flour': 51}
+    print("{batches} batches can be made from the available ingredients: {ingredients}.".format(
+        batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
