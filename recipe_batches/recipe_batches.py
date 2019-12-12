@@ -13,16 +13,15 @@ import math
 
 def recipe_batches(recipe, ingredients):
     batched = []
-    nope = 'Not enough ingredients to make this recipe'
     for i in recipe:
         if i in ingredients:
             if ingredients[i] / recipe[i] >= 1:
                 batched.append(math.floor(ingredients[i] / recipe[i]))
             else:
-                return print(nope)
+                return 0
         else:
-            return print(nope)
-    return print(f'{min(batched)} batches can be made with the available ingredients.')
+            return 0
+    return min(batched)
 
 
 if __name__ == '__main__':
