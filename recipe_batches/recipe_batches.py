@@ -22,12 +22,12 @@ def recipe_batches(recipe, ingredients):
                 return print(nope)
         else:
             return print(nope)
-    return print(f'{min(batches)} can be made with the available ingredients.')
+    return print(f'{min(batches)} batches can be made with the available ingredients.')
 
 
 recipe_batches({'milk': 100, 'butter': 50, 'flour': 5}, {'milk': 132, 'butter': 48, 'flour': 51})
 
-recipe_batches({'milk': 100, 'butter': 50, 'flour': 5}, {'milk': 332, 'butter': 200, 'flour': 51})
+recipe_batches({'milk': 100, 'butter': 50, 'flour': 5}, {'milk': 432, 'butter': 200, 'flour': 51})
 
 
 # if __name__ == '__main__':
